@@ -19,7 +19,7 @@ class Database extends Config
      * Lets you choose which connection group to
      * use if no other is specified.
      */
-    public string $defaultGroup = 'default';
+    public string $defaultGroup = ENVIRONMENT;
 
     /**
      * The default database connection.
@@ -31,6 +31,30 @@ class Database extends Config
         'password'     => '',
         'database'     => '',
         'DBDriver'     => 'MySQLi',
+        'DBPrefix'     => '',
+        'pConnect'     => false,
+        'DBDebug'      => true,
+        'charset'      => 'utf8',
+        'DBCollat'     => 'utf8_general_ci',
+        'swapPre'      => '',
+        'encrypt'      => false,
+        'compress'     => false,
+        'strictOn'     => false,
+        'failover'     => [],
+        'port'         => 3306,
+        'numberNative' => false,
+    ];
+
+    /**
+     * The development database connection.
+     */
+    public array $development = [
+        'DSN'          => '',
+        'hostname'     => '',
+        'username'     => '',
+        'password'     => '',
+        'database'     => APPPATH . 'Database/development.db',
+        'DBDriver'     => 'SQLite3',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,
