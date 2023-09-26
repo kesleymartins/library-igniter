@@ -10,7 +10,7 @@
           <?= $book->title ?>
         </span>
         <span>
-          <?= $book->status ?>
+          <?= $book->statusName() ?>
         </span>
       </li>
     <?php endforeach; ?>
