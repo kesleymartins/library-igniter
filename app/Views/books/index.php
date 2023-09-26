@@ -1,11 +1,15 @@
 <?= $this->extend('layouts/application.php') ?>
 
 <?= $this->section('content') ?>
-  <h1> Books </h1>
+  <div class="pb-2 mb-4 border-bottom d-flex align-items-center justify-content-between">
+    <h2 class="h2">Livros</h2>
 
-  <ul>
+    <a href="#" class="btn btn-primary">Novo livro</a>
+  </div>
+
+  <ul class="list-group ">
     <?php foreach ($this->data as $book): ?>
-      <li>
+      <li class="list-group-item d-flex justify-content-between">
         <span>
           <?= $book->title ?>
         </span>
