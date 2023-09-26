@@ -31,7 +31,7 @@ class BookModel extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
+    protected $beforeInsert   = ['setDefaultStatus'];
     protected $afterInsert    = [];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
@@ -39,4 +39,11 @@ class BookModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function setDefaultStatus(array $book)
+    {
+        $book['data']['status'] = BookStatus::AVAILABLE->value;
+
+        return $book;
+    }
 }
