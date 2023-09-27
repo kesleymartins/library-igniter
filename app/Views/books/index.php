@@ -4,7 +4,7 @@
     <div class="pb-2 mb-4 border-bottom d-flex align-items-center justify-content-between">
         <h2 class="h2">Livros</h2>
 
-        <a href="#" class="btn btn-primary">Novo livro</a>
+        <?= anchor('/books/new', 'Novo Livro', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <ul class="list-group ">
