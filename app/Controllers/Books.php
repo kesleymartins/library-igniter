@@ -59,6 +59,10 @@ class Books extends BaseController
         $bookModel = new BookModel();
         $book = new Book($this->request->getPost());
 
+        if ($bookModel->update($id, $book)) {
+            return redirect()->to('/books');
+        }
+
         $errors = $bookModel->errors();
         return redirect()->to("/books/edit/$id")->with('errors', $errors);
     }
