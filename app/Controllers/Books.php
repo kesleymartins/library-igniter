@@ -39,4 +39,23 @@ class Books extends BaseController
         $errors = $bookModel->errors();
         return redirect()->to('/books/new')->with('errors', $errors)->withInput();
     }
+
+    public function edit(string $id): string
+    {
+        $bookModel = new BookModel();
+        $book = $bookModel->find($id);
+
+        return view('books/edit', [
+            'book' => $book
+        ]);
+    }
+
+    public function update(string $id): RedirectResponse
+    {
+        $bookModel = new BookModel();
+        $book = new Book($this->request->getPost());
+
+        $errors = $bookModel->errors();
+        return redirect()->to("/books/edit/$id")->with('errors', $errors);
+    }
 }
