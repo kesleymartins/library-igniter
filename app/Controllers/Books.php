@@ -40,10 +40,14 @@ class Books extends BaseController
         return redirect()->to('/books/new')->with('errors', $errors)->withInput();
     }
 
-    public function edit(string $id): string
+    public function edit(string $id): string | RedirectResponse
     {
         $bookModel = new BookModel();
         $book = $bookModel->find($id);
+
+        if (null == $book) {
+            return redirect()->to('/books');
+        }
 
         return view('books/edit', [
             'book' => $book
