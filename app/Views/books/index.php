@@ -17,6 +17,10 @@
                 <span>
                     <?= $book->statusName() ?>
                 </span>
+
+                <span>
+                    <?= anchor("/books/edit/$book->id", 'Editar') ?>
+                </span>
             </li>
         <?php endforeach; ?>
     </ul>
