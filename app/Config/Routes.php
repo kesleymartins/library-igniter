@@ -13,3 +13,4 @@ $routes->get('/books/new', [Books::class, 'new']);
 $routes->post('/books', [Books::class, 'create']);
 $routes->get('/books/edit/(:num)', [Books::class, 'edit']);
 $routes->post('/books/(:num)', [Books::class, 'update']);
+$routes->get('/books/delete/(:num)', [Books::class, 'delete']);
