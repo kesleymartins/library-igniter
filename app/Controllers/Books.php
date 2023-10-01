@@ -66,4 +66,15 @@ class Books extends BaseController
         $errors = $bookModel->errors();
         return redirect()->to("/books/edit/$id")->with('errors', $errors);
     }
+
+    public function delete(string $id): RedirectResponse
+    {
+        $bookModel = new BookModel();
+
+        if ($bookModel->delete($id)) {
+            return redirect()->to('/books');
+        }
+
+        return redirect()->to('/books');
+    }
 }
