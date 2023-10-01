@@ -7,21 +7,24 @@
         <?= anchor('/books/new', 'Novo Livro', ['class' => 'btn btn-primary']) ?>
     </div>
 
-    <ul class="list-group ">
-        <?php foreach ($this->data as $book): ?>
-            <li class="list-group-item d-flex justify-content-between">
-                <span>
-                    <?= $book->title ?>
-                </span>
-
-                <span>
-                    <?= $book->statusName() ?>
-                </span>
-
-                <span>
-                    <?= anchor("/books/edit/$book->id", 'Editar') ?>
-                </span>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+    <table class="table table-sm border rounded">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <?php foreach($this->data as $index => $book): ?>
+                <tr>
+                    <th scope="row"><?= $index + 1 ?></th>
+                    <td><?= $book->title ?></td>
+                    <td><?= $book->statusName() ?></td>
+                    <td><?= anchor("/books/edit/$book->id", 'Editar')?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 <?= $this->endSection() ?>
