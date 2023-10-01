@@ -22,7 +22,10 @@
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $book->title ?></td>
                     <td><?= $book->statusName() ?></td>
-                    <td><?= anchor("/books/edit/$book->id", 'Editar')?></td>
+                    <td>
+                        <?= anchor("/books/edit/$book->id", 'Editar')?>
+                        <?= anchor("/books/delete/$book->id", 'Remover') ?>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
