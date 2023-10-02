@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <?php foreach($this->data as $index => $book): ?>
+            <?php foreach($books as $index => $book): ?>
                 <tr>
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $book->title ?></td>

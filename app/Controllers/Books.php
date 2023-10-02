@@ -14,7 +14,9 @@ class Books extends BaseController
         $bookModel = new BookModel();
         $books = $bookModel->findAll();
 
-        return view('books/index', $books);
+        return view('books/index', [
+            'books' => $books
+        ]);
     }
 
     public function new(): string
