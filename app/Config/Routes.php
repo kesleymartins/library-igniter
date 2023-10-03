@@ -2,6 +2,7 @@
 
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Books;
+use App\Controllers\Authors;
 
 /**
  * @var RouteCollection $routes
@@ -14,3 +15,5 @@ $routes->post('/books', [Books::class, 'create']);
 $routes->get('/books/edit/(:num)', [Books::class, 'edit']);
 $routes->post('/books/(:num)', [Books::class, 'update']);
 $routes->get('/books/delete/(:num)', [Books::class, 'delete']);
+
+$routes->get('/authors', [Authors::class, 'index']);
