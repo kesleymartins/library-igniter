@@ -4,6 +4,9 @@
             <li>
                 <?= anchor('books', 'Books', ['class' => 'nav-link px-2 link-body-emphasis']) ?>
             </li>
+            <li>
+                <?= anchor('authors', 'Autores', ['class' => 'nav-link px-2 link-body-emphasis']) ?>
+            </li>
         </ul>
     </div>
 </header>
