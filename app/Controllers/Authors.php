@@ -18,4 +18,26 @@ class Authors extends BaseController
             'authors' => $authors
         ]);
     }
+
+    public function new(): string
+    {
+        $author = new Author();
+
+        return view('/authors/new', [
+            'author' => $author
+        ]);
+    }
+
+    public function create(): RedirectResponse
+    {
+        $author = new Author($this->request->getPost());
+        $authorModel = new AuthorModel();
+
+        if ($authorModel->insert($author)) {
+            return redirect()->to('/authors');
+        }
+
+        $errors = $authorModel->errors();
+        return redirect()->to('/authors/new')->with('errors', $errors)->withInput();
+    }
 }
