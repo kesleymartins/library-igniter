@@ -17,3 +17,5 @@ $routes->post('/books/(:num)', [Books::class, 'update']);
 $routes->get('/books/delete/(:num)', [Books::class, 'delete']);
 
 $routes->get('/authors', [Authors::class, 'index']);
+$routes->get('/authors/new', [Authors::class, 'new']);
+$routes->post('/authors', [Authors::class, 'create']);
