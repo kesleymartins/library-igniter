@@ -21,3 +21,4 @@ $routes->get('/authors/new', [Authors::class, 'new']);
 $routes->post('/authors', [Authors::class, 'create']);
 $routes->get('/authors/edit/(:num)', [Authors::class, 'edit']);
 $routes->post('/authors/(:num)', [Authors::class, 'update']);
+$routes->get('/authors/delete/(:num)', [Authors::class, 'delete']);
