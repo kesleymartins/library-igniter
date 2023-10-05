@@ -22,6 +22,7 @@
                     <td><?= $author->name ?></td>
                     <td>
                         <?= anchor("/authors/edit/$author->id", 'Editar')?>
+                        <?= anchor("/authors/delete/$author->id", 'Remover') ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
