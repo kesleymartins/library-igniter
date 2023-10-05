@@ -21,6 +21,7 @@
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $author->name ?></td>
                     <td>
+                        <?= anchor("/authors/edit/$author->id", 'Editar')?>
                     </td>
                 </tr>
             <?php endforeach; ?>
