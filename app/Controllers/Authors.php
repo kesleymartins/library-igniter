@@ -67,4 +67,12 @@ class Authors extends BaseController
         $errors = $authorModel->errors();
         return redirect()->to("/authors/edit/$id")->with('errors', $errors);
     }
+
+    public function delete(string $id): RedirectResponse
+    {
+        $authorModel = new AuthorModel();
+        $authorModel->delete($id);
+
+        return redirect()->to('/authors');
+    }
 }
