@@ -40,4 +40,31 @@ class Authors extends BaseController
         $errors = $authorModel->errors();
         return redirect()->to('/authors/new')->with('errors', $errors)->withInput();
     }
+
+    public function edit(string $id): string | RedirectResponse
+    {
+        $authorModel = new AuthorModel();
+        $author = $authorModel->find($id);
+
+        if (null === $author) {
+            return redirect()->to('/authors');
+        }
+
+        return view('authors/edit', [
+            'author' => $author
+        ]);
+    }
+
+    public function update(string $id): RedirectResponse
+    {
+        $authorModel = new AuthorModel();
+        $author = new Author($this->request->getPost());
+
+        if ($authorModel->update($id, $author)) {
+            return redirect()->to('/authors');
+        }
+
+        $errors = $authorModel->errors();
+        return redirect()->to("/authors/edit/$id")->with('errors', $errors);
+    }
 }
