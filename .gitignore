@@ -127,3 +127,4 @@ nb-configuration.xml
 
 # Development Database
 app/Database/development.db
+node_modules/
