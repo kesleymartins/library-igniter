@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "esbuild app/Javascript/application.js --bundle --outfile=public/static/assets/js/bundle.js --watch",
+    "build": "esbuild app/Javascript/application.js --bundle --outfile=public/static/assets/js/bundle.js --minify"
   },
   "author": "",
   "license": "ISC",
