@@ -127,4 +127,7 @@ nb-configuration.xml
 
 # Development Database
 app/Database/development.db
+
+# JS related
 node_modules/
+public/static/assets/js/*
