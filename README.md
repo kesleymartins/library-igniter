@@ -6,12 +6,17 @@ A simple library app styled with bootstrap
 - Composer
 - php-intl
 - sqlite3
+- node
 
 ### Installation
 ---
 ```sh
+# Install foreman is you don't have installed
+npm i -g foreman
+
 # Install dependencies
 composer install
+npm install
 
 Setup local environment, by default is set to development env
 cp env .env
@@ -20,5 +25,5 @@ cp env .env
 php spark migrate
 
 # Open local server localhost:8080
-php spark serve
+foreman start
 ```
