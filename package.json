@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "esbuild": "0.19.4"
+  },
+  "dependencies": {
+    "stimulus": "^3.2.2"
   }
 }
