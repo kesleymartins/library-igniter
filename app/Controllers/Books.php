@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Entities\Book;
 use App\Models\BookModel;
+use App\Models\AuthorModel;
 use CodeIgniter\HTTP\RedirectResponse;
 
 class Books extends BaseController
@@ -23,8 +24,12 @@ class Books extends BaseController
     {
         $book = new Book();
 
+        $authorModel = new AuthorModel();
+        $authors = $authorModel->findAll();
+
         return view('books/new', [
-            'book' => $book
+            'book' => $book,
+            'authors' => $authors
         ]);
     }
 
@@ -51,8 +56,12 @@ class Books extends BaseController
             return redirect()->to('/books');
         }
 
+        $authorModel = new AuthorModel();
+        $authors = $authorModel->findAll();
+
         return view('books/edit', [
-            'book' => $book
+            'book' => $book,
+            'authors' => $authors
         ]);
     }
 
