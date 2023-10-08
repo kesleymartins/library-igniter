@@ -42,7 +42,12 @@ class BookModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function setDefaultStatus(array $book)
+    /**
+     * @param $book array
+     *
+     * @return array
+     */
+    public function setDefaultStatus(array $book): array
     {
         $book['data']['status'] = BookStatus::AVAILABLE->value;
 
