@@ -7,25 +7,31 @@
         <?= anchor('/authors/new', 'Novo Autor', ['class' => 'btn btn-primary']) ?>
     </div>
 
-    <table class="table table-sm border rounded">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            <?php foreach($authors as $index => $author): ?>
+    <?php if ($authors): ?>
+        <table class="table table-sm border rounded">
+            <thead>
                 <tr>
-                    <th scope="row"><?= $index + 1 ?></th>
-                    <td><?= $author->name ?></td>
-                    <td>
-                        <?= anchor("/authors/edit/$author->id", 'Editar')?>
-                        <?= anchor("/authors/delete/$author->id", 'Remover') ?>
-                    </td>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ações</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="table-group-divider">
+                <?php foreach($authors as $index => $author): ?>
+                    <tr>
+                        <th scope="row"><?= $index + 1 ?></th>
+                        <td><?= $author->name ?></td>
+                        <td>
+                            <?= anchor("/authors/edit/$author->id", 'Editar')?>
+                            <?= anchor("/authors/delete/$author->id", 'Remover') ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <div class="alert alert-info text-center" role="alert">
+            Nenhum autor foi encontrado, adicione algum usando o botão acima.
+        </div> 
+    <?php endif; ?>
 <?= $this->endSection() ?>
