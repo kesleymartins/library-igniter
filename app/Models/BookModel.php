@@ -25,7 +25,11 @@ class BookModel extends Model
 
     // Validation
     protected $validationRules      = [
-        'title' => 'required'
+        'title' => 'required',
+        'author_id' => [
+            'label' => 'author',
+            'rules' => 'required'
+        ]
     ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
