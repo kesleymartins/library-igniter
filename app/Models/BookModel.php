@@ -14,7 +14,7 @@ class BookModel extends Model
     protected $returnType       = Book::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title'];
+    protected $allowedFields    = ['title', 'author_id'];
 
     // Dates
     protected $useTimestamps = false;
