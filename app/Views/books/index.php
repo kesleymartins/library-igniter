@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titulo</th>
+                <th scope="col">Autor</th>
                 <th scope="col">Status</th>
                 <th scope="col">Ações</th>
             </tr>
@@ -21,6 +22,7 @@
                 <tr>
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $book->title ?></td>
+                    <td><?= $book->author()->name ?: '-' ?></td>
                     <td><?= $book->statusName() ?></td>
                     <td>
                         <?= anchor("/books/edit/$book->id", 'Editar')?>
