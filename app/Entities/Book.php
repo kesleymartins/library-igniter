@@ -11,7 +11,12 @@ class Book extends Entity
     protected $dates   = [];
     protected $casts   = [];
 
-    public function statusName()
+    /**
+     * Retorna o nome do status
+     *
+     * @return string
+     */
+    public function statusName(): string
     {
         $status = BookStatus::from($this->status);
 
