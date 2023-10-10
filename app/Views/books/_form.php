@@ -8,8 +8,8 @@
         <input type="text" name="title" id="title" class="form-control" value="<?= $book->title ?>"/>
     </div>
 
-    <select name="author" id="author" class="form-select mb-3" aria-label="Default select example">
-        <option selected>Selecione o Autor</option>
+    <select name="author_id" id="author_id" class="form-select mb-3" aria-label="Default select example">
+        <option value="">Selecione o Autor</option>
 
         <?php foreach($authors as $author): ?>
             <option value="<?= $author->id ?>">
